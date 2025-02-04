@@ -1,2 +1,0 @@
-# prashikportfolio
-Data Science Portfolio
