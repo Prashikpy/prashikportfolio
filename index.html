@@ -1,825 +1,795 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prashik Bansod | Data Science & Analytics</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        :root {
-            --primary: #2563eb;
-            --secondary: #3b82f6;
-            --accent: #60a5fa;
-            --background: #f8fafc;
-            --text: #1e293b;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            background: var(--background);
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section-title {
-            @apply text-4xl font-bold mb-12 text-center relative;
-        }
-        
-        .section-title::after {
-            content: "";
-            @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-blue-600 rounded-full;
-        }
-        
-        .section-title::before {
-            content: "";
-            @apply absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-400 rounded-full;
-        }
-
-        .gradient-heading {
-            @apply text-4xl font-bold mb-8;
-            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prashik Bansod | Data Science & Analytics</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<style>
+@import
+url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+:root {
+--primary: #2563eb;
+--secondary: #3b82f6;
+--accent: #60a5fa;
+--background: #f8fafc;
+--text: #1e293b;
+}
+body {
+font-family: 'Inter', sans-serif;
+color: var(--text);
+background: var(--background);
+}
+.gradient-bg {
+background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+.gradient-text {
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.section-title {
+@apply text-4xl font-bold mb-12 text-center relative;
+}
+.section-title::after {
+content: "";
+@apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-blue-600
+rounded-full;
+}
+.section-title::before {
+content: "";
+@apply absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-400
+rounded-full;
+}
+.gradient-heading {
+@apply text-4xl font-bold mb-8;
+background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+</style>
 </head>
 <body>
-    <!-- Enhanced Navigation with Social Links -->
-    <nav class="fixed w-full bg-white z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <a href="#" class="text-2xl font-bold gradient-text">Prashik Bansod</a>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#expertise" class="nav-link">Expertise</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#publications" class="nav-link">Publications</a>
-                    <div class="flex space-x-4 ml-8">
-                        <a href="https://github.com/Prashikpy" class="text-gray-600 hover:text-blue-600 transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/prashik-bansod-data-analyst/" class="text-gray-600 hover:text-blue-600 transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                        </a>
-                        <a href="https://prashikbansod.medium.com/" class="text-gray-600 hover:text-blue-600 transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.958l5.378 11.795 4.728-11.795h6.633v.403l-1.916 1.837c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537v-10.91l-5.389 13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.521 3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.325-1.052v-10.608z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+<!-- Enhanced Navigation with Social Links -->
+<nav class="fixed w-full bg-white z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-20 items-center">
+<a href="#" class="text-2xl font-bold gradient-text">Prashik Bansod</a>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#about" class="nav-link">About</a>
+<a href="#experience" class="nav-link">Experience</a>
+<a href="#projects" class="nav-link">Projects</a>
+<a href="#publications" class="nav-link">Publications</a>
+<div class="flex space-x-4 ml-8">
+<a href="https://github.com/Prashikpy" class="text-gray-600 hover:text-blue-600
+transition-colors">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207
+11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.33
+3-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07
+1.834 2.807 1.304
+3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931
+0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301
+1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23
+3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807
+5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589
+8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/prashik-bansod-data-analyst/"
+class="text-gray-600 hover:text-blue-600 transition-colors">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762
+0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966
+0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5
+12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7
+2.476v6.759z"/>
+</svg>
+</a>
+<a href="https://prashikbansod.medium.com/" class="text-gray-600
+hover:text-blue-600 transition-colors">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M2.846
+6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.958l5.378 11.795
+4.728-11.795h6.633v.403l-1.916
+1.837c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871
+1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537v-10.91l-5.389
+13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.521
+3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.325-1.052v-10.608z"/>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
 
-    <!-- Hero Section with Enhanced Design -->
+<!-- Hero Section with Enhanced Design -->
 <section class="gradient-bg pt-32 pb-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="animate-fade-up">
-                <h1 class="text-5xl font-bold mb-6">
-                    Transforming Data into 
-                    <span class="gradient-text">Actionable Insights</span>
-                </h1>
-                <p class="text-xl text-gray-600 mb-8">
-                    Data Scientist specializing in machine learning, statistical analysis, and predictive modeling with emphasis on quantitative methodologies and advanced analytical frameworks
-                </p>
-                <div class="flex space-x-4">
-                    <a href="#projects" class="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
-                        View Projects
-                    </a>
-                    <a href="https://github.com/Prashikpy" class="px-8 py-3 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition-colors">
-                        GitHub
-                    </a>
-                </div>
-            </div>
-            <div class="relative animate-fade-up delay-200">
-                <img src="Prashik_Mob-removebg-preview.png" alt="Prashik Bansod" class="w-full max-w-md mx-auto rounded-2xl shadow-xl">
-                <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                        <span class="text-sm font-medium">Available for Research Collaborations</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="animate-fade-up">
+<h1 class="text-5xl font-bold mb-6">
+Transforming Data into
+<span class="gradient-text">Actionable Insights</span>
+</h1>
+<p class="text-xl text-gray-600 mb-8">
+Data Analytics professional with expertise in machine learning, business intelligence, and strategic data-driven solutions. Currently pursuing MS Analytics at TISS Mumbai.
+</p>
+<div class="flex space-x-4">
+<a href="#projects" class="px-8 py-3 bg-blue-600 text-white rounded-full
+hover:bg-blue-700 transition-colors">
+View Projects
+</a>
+<a href="https://github.com/Prashikpy" class="px-8 py-3 border border-blue-600
+text-blue-600 rounded-full hover:bg-blue-50 transition-colors">
+GitHub
+</a>
+</div>
+</div>
+<div class="relative animate-fade-up delay-200">
+<img src="Prashik_Mob-removebg-preview.png" alt="Prashik Bansod" class="w-full
+max-w-md mx-auto rounded-2xl shadow-xl">
+<div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
+<div class="flex items-center space-x-2">
+<div class="w-3 h-3 bg-green-500 rounded-full"></div>
+<span class="text-sm font-medium">Available for Opportunities</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- Enhanced About Section with Academic Focus -->
+<!-- Enhanced About Section -->
 <section id="about" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-10 sm:px-10 lg:px-15">
-        
-        <div class="prose max-w-none">
-            <div class="bg-gray-50 p-8 rounded-xl mb-8">
-                <h3 class="text-2xl font-semibold mb-4 text-blue-600">Research Focus & Methodological Approach</h3>
-                <p class="text-lg text-gray-800 mb-6">
-                    As a final year student at the Tata Institute of Social Sciences, Mumbai, pursuing MS in Analytics, my research integrates advanced statistical methodologies with practical applications in data science. My academic foundation in Mechanical Engineering from College of Engineering, Pune, complements my current focus on machine learning and statistical learning paradigms.
-                </p>
-                <p class="text-lg text-gray-800 mb-6">
-                    My investigative approach emphasizes rigorous statistical analysis, particularly in:
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div class="bg-white p-6 rounded-lg shadow-sm">
-                        <h4 class="font-semibold text-blue-700 mb-2">Quantitative Analysis</h4>
-                        <p class="text-gray-700">Application of advanced statistical methods and machine learning algorithms for predictive modeling and pattern recognition</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm">
-                        <h4 class="font-semibold text-blue-700 mb-2">Data-Driven Research</h4>
-                        <p class="text-gray-700">Implementation of empirical research methodologies with emphasis on statistical significance and reproducibility</p>
-                    </div>
-                </div>
-            </div>
-
-            <p class="text-lg text-gray-700 mb-6">
-                My research portfolio encompasses various projects and publications available in the sections below. Each repository is meticulously documented with comprehensive methodological frameworks and statistical analyses. My educational journey has been enriched through extensive engagement with advanced online platforms, including specialized courses in statistical methods and machine learning through edX and Coursera.
-            </p>
-
-            <div class="bg-blue-50 p-8 rounded-xl mt-8">
-                <h3 class="text-2xl font-semibold mb-6">Research Areas & Methodological Expertise:</h3>
-                <ul class="space-y-4 text-gray-700">
-                    <li class="flex items-center">
-                        <span class="text-blue-600 mr-3">▸</span>
-                        <div>
-                            <strong class="block text-gray-900">Statistical Learning & Machine Learning</strong>
-                            <p>Implementation of advanced algorithms and statistical models for complex data analysis</p>
-                        </div>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-blue-600 mr-3">▸</span>
-                        <div>
-                            <strong class="block text-gray-900">Quantitative Research Methods</strong>
-                            <p>Application of rigorous statistical frameworks for empirical research and hypothesis testing</p>
-                        </div>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-blue-600 mr-3">▸</span>
-                        <div>
-                            <strong class="block text-gray-900">Sports Analytics & Performance Metrics</strong>
-                            <p>Statistical analysis of Formula 1 performance data using advanced analytical methodologies</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div class="max-w-7xl mx-auto px-10 sm:px-10 lg:px-15">
+<div class="prose max-w-none">
+<div class="bg-gray-50 p-8 rounded-xl mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-blue-600">Professional Background & Academic Journey</h3>
+<p class="text-lg text-gray-800 mb-6">
+I'm a final year student at the Tata Institute of Social Sciences, Mumbai, pursuing MS in Analytics with a strong foundation in data science and business intelligence. My academic journey began with a Bachelor of Technology in Mechanical Engineering from College of Engineering, Pune, which provided me with analytical thinking and problem-solving skills that I now apply to data-driven solutions.
+</p>
+<p class="text-lg text-gray-800 mb-6">
+My professional experience spans across healthcare technology, digital marketing, and business analytics, where I've successfully delivered data-driven solutions that generated significant business value. I specialize in:
+</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h4 class="font-semibold text-blue-700 mb-2">Business Intelligence & Analytics</h4>
+<p class="text-gray-700">Advanced data analysis, dashboard development, and strategic insights generation for business growth</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h4 class="font-semibold text-blue-700 mb-2">Machine Learning & AI</h4>
+<p class="text-gray-700">Implementation of ML algorithms, predictive modeling, and AI-driven solutions for real-world problems</p>
+</div>
+</div>
+</div>
+<p class="text-lg text-gray-700 mb-6">
+Through my professional experience, I've managed high-value client relationships, optimized marketing campaigns, and developed innovative solutions that directly impacted business outcomes. My work has ranged from generating 200K+ in sales revenue to improving operational efficiency by 30% through data automation.
+</p>
+<div class="bg-blue-50 p-8 rounded-xl mt-8">
+<h3 class="text-2xl font-semibold mb-6">Core Competencies & Expertise:</h3>
+<ul class="space-y-4 text-gray-700">
+<li class="flex items-center">
+<span class="text-blue-600 mr-3">▸</span>
+<div>
+<strong class="block text-gray-900">Data Analytics & Business Intelligence</strong>
+<p>Advanced proficiency in Python, R, SQL, and visualization tools like Tableau and Power BI</p>
+</div>
+</li>
+<li class="flex items-center">
+<span class="text-blue-600 mr-3">▸</span>
+<div>
+<strong class="block text-gray-900">Digital Marketing & CRM Analytics</strong>
+<p>Expertise in Salesforce Marketing Cloud, campaign optimization, and customer engagement analytics</p>
+</div>
+</li>
+<li class="flex items-center">
+<span class="text-blue-600 mr-3">▸</span>
+<div>
+<strong class="block text-gray-900">Machine Learning & AI Development</strong>
+<p>Experience in developing AI-driven platforms and implementing ML solutions for business applications</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 
-<!-- Academic Background Section with Enhanced Research Focus -->
+<!-- Academic & Professional Background Section -->
 <section class="py-20 gradient-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="card p-8 bg-white rounded-xl shadow-lg" data-aos="fade-right">
-                <h3 class="text-2xl font-semibold mb-6 text-blue-700">Academic Trajectory</h3>
-                <div class="space-y-8">
-                    <div class="border-l-4 border-blue-600 pl-6">
-                        <h4 class="font-semibold text-xl">MS in Analytics</h4>
-                        <p class="text-gray-700">Tata Institute of Social Sciences, Mumbai</p>
-                        <p class="text-sm text-gray-500 mb-3">2023 - Present</p>
-                        <div class="space-y-2">
-                            <div class="flex items-start">
-                                <span class="text-blue-600 mr-2">▸</span>
-                                <p class="text-gray-700">Specialized in Advanced Statistical Learning Methodologies and Machine Learning Frameworks</p>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-blue-600 mr-2">▸</span>
-                                <p class="text-gray-700">Research Focus: Predictive Analytics and Statistical Modeling</p>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-blue-600 mr-2">▸</span>
-                                <p class="text-gray-700">Thesis: Strategies for Passenger De-crowding in Mumbai’s Local Train Network</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="border-l-4 border-blue-600 pl-6">
-                        <h4 class="font-semibold text-xl">B.E. in Mechanical Engineering</h4>
-                        <p class="text-gray-700">College of Engineering, Pune</p>
-                        <p class="text-sm text-gray-500 mb-3">2016 - 2019</p>
-                        <div class="space-y-2">
-                            <div class="flex items-start">
-                                <span class="text-blue-600 mr-2">▸</span>
-                                <p class="text-gray-700">Foundation in Quantitative Analysis and Engineering Mathematics</p>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-blue-600 mr-2">▸</span>
-                                <p class="text-gray-700">Research Project: Design and Installation of Heat Pump for Hotel Industry</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card p-8 bg-white rounded-xl shadow-lg" data-aos="fade-left">
-                <h3 class="text-2xl font-semibold mb-6 text-blue-700">Research Methodology & Focus Areas</h3>
-                <div class="space-y-6">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-semibold text-xl text-blue-600 mb-3">Machine Learning Applications</h4>
-                        <p class="text-gray-700 mb-4">Implementation of advanced deep learning architectures for:</p>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
-                                <span>Computer Vision: Convolutional Neural Networks for Image Processing</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
-                                <span>Natural Language Processing: Transformer Models for Text Analysis</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
-                                <span>Time Series Analysis: LSTM Networks for Sequential Data</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-semibold text-xl text-blue-600 mb-3">Statistical Learning</h4>
-                        <p class="text-gray-700 mb-4">Advanced statistical methodologies including:</p>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
-                                <span>Multivariate Regression Analysis and Model Optimization</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
-                                <span>Time Series Forecasting with ARIMA and SARIMA Models</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
-                                <span>Bayesian Statistical Methods for Uncertainty Quantification</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-semibold text-xl text-blue-600 mb-3">Sports Analytics</h4>
-                        <p class="text-gray-700 mb-4">Specialized research in Formula 1 performance analysis:</p>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
-                                <span>Predictive Modeling of Race Outcomes Using Historical Data</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
-                                <span>Statistical Analysis of Performance Metrics and Strategy Impact</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
-                                <span>Machine Learning Applications in Race Strategy Optimization</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="card p-8 bg-white rounded-xl shadow-lg" data-aos="fade-right">
+<h3 class="text-2xl font-semibold mb-6 text-blue-700">Educational Background</h3>
+<div class="space-y-8">
+<div class="border-l-4 border-blue-600 pl-6">
+<h4 class="font-semibold text-xl">MS in Analytics</h4>
+<p class="text-gray-700">Tata Institute of Social Sciences, Mumbai</p>
+<p class="text-sm text-gray-500 mb-3">May 2023 - June 2025 | CGPA: 8.0/10.0</p>
+<div class="space-y-2">
+<div class="flex items-start">
+<span class="text-blue-600 mr-2">▸</span>
+<p class="text-gray-700">Core Member, Acumen Business Consulting Club</p>
+</div>
+<div class="flex items-start">
+<span class="text-blue-600 mr-2">▸</span>
+<p class="text-gray-700">Specialization in Advanced Analytics and Machine Learning</p>
+</div>
+<div class="flex items-start">
+<span class="text-blue-600 mr-2">▸</span>
+<p class="text-gray-700">Focus on Business Intelligence and Data Science Applications</p>
+</div>
+</div>
+</div>
+<div class="border-l-4 border-blue-600 pl-6">
+<h4 class="font-semibold text-xl">B.Tech in Mechanical Engineering</h4>
+<p class="text-gray-700">College of Engineering, Pune</p>
+<p class="text-sm text-gray-500 mb-3">May 2016 - June 2019</p>
+<div class="space-y-2">
+<div class="flex items-start">
+<span class="text-blue-600 mr-2">▸</span>
+<p class="text-gray-700">Core Member of Team Nemesis Racing COEP</p>
+</div>
+<div class="flex items-start">
+<span class="text-blue-600 mr-2">▸</span>
+<p class="text-gray-700">Foundation in Engineering Mathematics and Problem Solving</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card p-8 bg-white rounded-xl shadow-lg" data-aos="fade-left">
+<h3 class="text-2xl font-semibold mb-6 text-blue-700">Professional Certifications</h3>
+<div class="space-y-6">
+<div class="bg-gray-50 p-6 rounded-lg">
+<h4 class="font-semibold text-xl text-blue-600 mb-3">Industry Certifications</h4>
+<ul class="space-y-3 text-gray-700">
+<li class="flex items-start">
+<span class="text-blue-600 mr-2">•</span>
+<div>
+<strong>Google Data Analytics Professional Certificate</strong>
+<p class="text-sm text-gray-600">Comprehensive certification covering data analysis, visualization, and business intelligence</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="text-blue-600 mr-2">•</span>
+<div>
+<strong>Business Analytics - Wharton Business School</strong>
+<p class="text-sm text-gray-600">Advanced business analytics and strategic decision-making</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="text-blue-600 mr-2">•</span>
+<div>
+<strong>Python for Data Science and Machine Learning</strong>
+<p class="text-sm text-gray-600">Comprehensive ML and data science implementation</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg">
+<h4 class="font-semibold text-xl text-blue-600 mb-3">Process Improvement</h4>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<span class="text-blue-600 mr-2">•</span>
+<span>Lean Six Sigma White Belt Certificate</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- Expertise Section with Advanced Methodological Framework -->
-<section id="expertise" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="card p-8 bg-white rounded-xl shadow-lg" data-aos="fade-up">
-                <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Statistical Analysis & Methodology</h3>
-                <div class="space-y-4">
-                    <p class="text-gray-700">Implementation of advanced statistical frameworks encompassing:</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <span class="text-gray-700">Multivariate Statistical Analysis with emphasis on dimensional reduction techniques and factor analysis</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <span class="text-gray-700">Time Series Analysis utilizing ARIMA, SARIMA, and state-space models</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <span class="text-gray-700">Bayesian Statistical Methods for complex parameter estimation</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<!-- Professional Experience Section -->
+<section id="experience" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h3 class="section-title">Professional Experience</h3>
+<div class="space-y-12">
+<!-- Current Role -->
+<div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-blue-600" data-aos="fade-up">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-2xl font-semibold text-blue-700">Special Project Associate</h4>
+<p class="text-lg text-gray-700">Zocdoc India, Pune</p>
+<p class="text-sm text-gray-500">March 2022 - June 2022</p>
+</div>
+<div class="text-right">
+<span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm">Data Analytics</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-4">
+<h5 class="font-semibold text-gray-800">Key Achievements:</h5>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<span class="text-blue-600 mr-2">▸</span>
+<span>Optimized email marketing campaigns in Salesforce Marketing Cloud, achieving 6.8% increase in click-through rate</span>
+</li>
+<li class="flex items-start">
+<span class="text-blue-600 mr-2">▸</span>
+<span>Enhanced employee productivity tracking system for 200+ employees, improving monitoring accuracy by 8%</span>
+</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-semibold text-gray-800">Project Management:</h5>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<span class="text-blue-600 mr-2">▸</span>
+<span>Managed communication with 8+ stakeholders simultaneously</span>
+</li>
+<li class="flex items-start">
+<span class="text-blue-600 mr-2">▸</span>
+<span>Achieved 90% success rate on POC implementations across 15+ client projects</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
 
-            <div class="card p-8 bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Machine Learning Architectures</h3>
-                <div class="space-y-4">
-                    <p class="text-gray-700">Development and optimization of:</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <span class="text-gray-700">Deep Learning Models: CNN architectures for computer vision and transformer networks for NLP</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <span class="text-gray-700">Ensemble Methods: Random Forests, Gradient Boosting, and Stacking algorithms</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <span class="text-gray-700">Reinforcement Learning: Q-learning and policy gradient methods</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<!-- Previous Role -->
+<div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-green-600" data-aos="fade-up">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-2xl font-semibold text-green-700">Digital Success Analyst</h4>
+<p class="text-lg text-gray-700">Novosalus Technologies Pvt. Ltd., Pune</p>
+<p class="text-sm text-gray-500">August 2019 - February 2022</p>
+</div>
+<div class="text-right">
+<span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm">Business Development</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-4">
+<h5 class="font-semibold text-gray-800">Revenue Generation:</h5>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<span class="text-green-600 mr-2">▸</span>
+<span>Generated 200K+ in sales revenue through strategic account management of 24 high-value healthcare clients</span>
+</li>
+<li class="flex items-start">
+<span class="text-green-600 mr-2">▸</span>
+<span>Educated 15+ mid-sized agencies and 5 enterprise clients on product capabilities</span>
+</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-semibold text-gray-800">Product Development:</h5>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<span class="text-green-600 mr-2">▸</span>
+<span>Co-developed Medroid chatbot solution for patient appointment scheduling</span>
+</li>
+<li class="flex items-start">
+<span class="text-green-600 mr-2">▸</span>
+<span>Achieved 95% accuracy rate for 1,000+ monthly bookings</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
 
-            <div class="card p-8 bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Data Visualization & Analysis</h3>
-                <div class="space-y-4">
-                    <p class="text-gray-700">Advanced visualization methodologies including:</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <span class="text-gray-700">Interactive Statistical Visualizations using D3.js and advanced R frameworks</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <span class="text-gray-700">Network Analysis and Graph Theory Visualizations</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <span class="text-gray-700">Geospatial Data Visualization and Analysis</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Technical Proficiency Matrix -->
-        <div class="mt-20">
-            <h3 class="text-2xl font-semibold mb-8 text-center">Quantitative Research & Technical Proficiency Matrix</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <h4 class="text-lg font-semibold mb-6">Statistical Computing Languages</h4>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm font-medium">Python: Statistical Analysis & ML Frameworks</span>
-                                <span class="text-sm text-gray-600">95%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
-                            </div>
-                            <p class="text-xs text-gray-600 mt-1">NumPy, SciPy, Scikit-learn, TensorFlow</p>
-                        </div>
-                        
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm font-medium">R: Statistical Computing & Graphics</span>
-                                <span class="text-sm text-gray-600">90%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                            <p class="text-xs text-gray-600 mt-1">tidyverse, ggplot2, caret, stats</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <h4 class="text-lg font-semibold mb-4">Machine Learning Frameworks</h4>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <div>
-                                <strong>Deep Learning</strong>
-                                <p class="text-sm text-gray-600">TensorFlow, PyTorch, Keras</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <div>
-                                <strong>Natural Language Processing</strong>
-                                <p class="text-sm text-gray-600">NLTK, spaCy, Transformers</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <div>
-                                <strong>Computer Vision</strong>
-                                <p class="text-sm text-gray-600">OpenCV, PIL, torchvision</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <h4 class="text-lg font-semibold mb-4">Research Tools & Databases</h4>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <div>
-                                <strong>Database Systems</strong>
-                                <p class="text-sm text-gray-600">PostgreSQL, MongoDB, Neo4j</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <div>
-                                <strong>Big Data Processing</strong>
-                                <p class="text-sm text-gray-600">Spark, Hadoop, Kafka</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">▸</span>
-                            <div>
-                                <strong>Version Control & Documentation</strong>
-                                <p class="text-sm text-gray-600">Git, LaTeX, Jupyter</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- Internship Experience -->
+<div class="bg-gray-50 p-8 rounded-xl">
+<h4 class="text-2xl font-semibold mb-6 text-gray-800">Internship Experience</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h5 class="text-lg font-semibold text-blue-700 mb-2">HR Analyst Intern</h5>
+<p class="text-gray-600 mb-2">Technova Imaging System, Mumbai</p>
+<p class="text-sm text-gray-500 mb-4">April 2024 - June 2024</p>
+<ul class="space-y-2 text-gray-700 text-sm">
+<li>• Analyzed workforce data for 500+ employees to identify skill gaps</li>
+<li>• Reduced training evaluation time by 30% through automation</li>
+<li>• Created interactive Tableau dashboard for training ROI visibility</li>
+</ul>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h5 class="text-lg font-semibold text-blue-700 mb-2">Marketing Analyst Intern</h5>
+<p class="text-gray-600 mb-2">Jungheinrich India, Mumbai</p>
+<p class="text-sm text-gray-500 mb-4">October 2023 - December 2023</p>
+<ul class="space-y-2 text-gray-700 text-sm">
+<li>• Improved email marketing CTR from 5.6% to 7.1% through A/B testing</li>
+<li>• Enhanced website achieving 200+ monthly visitors within 2 months</li>
+<li>• Delivered strategic recommendations across 4 key business areas</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- Featured Research Projects Section -->
+<!-- Key Projects Section -->
 <section id="projects" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 class="section-title">Research Projects & Empirical Investigations</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- AI Face Detection Research Project -->
-            <div class="card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
-                <div class="relative">
-                    <img src="img_apr_1.jpeg" alt="AI Face Detection Research" class="w-full h-48 object-cover">
-                    <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm">
-                        Computer Vision
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-3">Deep Learning-Based Face Authentication: A Comparative Analysis</h3>
-                    <p class="text-gray-600 mb-4">
-                        An empirical investigation into convolutional neural network architectures for distinguishing between authentic and synthetically generated facial representations.
-                    </p>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="text-sm font-semibold text-gray-700">Methodological Framework:</h4>
-                            <ul class="mt-2 space-y-1 text-sm text-gray-600">
-                                <li>• Transfer Learning with Pre-trained CNNs</li>
-                                <li>• Feature Extraction via Deep Neural Networks</li>
-                                <li>• Statistical Validation using K-fold Cross-validation</li>
-                            </ul>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">PyTorch</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">CNN Architecture</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Statistical Analysis</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between mt-6 pt-6 border-t border-gray-200">
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Research Paper →</a>
-                        <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Repository ↗</a>
-                    </div>
-                </div>
-            </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h3 class="section-title">Key Projects & Research</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Mumbai Railway Optimization Project -->
+<div class="card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+<div class="relative">
+<div class="h-48 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center">
+<svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+</svg>
+</div>
+<div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm">
+Urban Analytics
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Mumbai Railway Optimization</h3>
+<p class="text-gray-600 mb-4">
+Spearheaded advanced research initiative with MRVC analyzing 500,000+ passenger journey data points to develop strategies reducing congestion by 16% in Mumbai's local train system.
+</p>
+<div class="space-y-4">
+<div>
+<h4 class="text-sm font-semibold text-gray-700">Key Achievements:</h4>
+<ul class="mt-2 space-y-1 text-sm text-gray-600">
+<li>• Advanced data analytics on massive passenger datasets</li>
+<li>• 16% reduction in system congestion</li>
+<li>• Collaboration with Mumbai Railway Vikas Corporation</li>
+</ul>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Big Data</span>
+<span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Urban Planning</span>
+<span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python</span>
+</div>
+</div>
+<div class="flex justify-between mt-6 pt-6 border-t border-gray-200">
+<a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Details →</a>
+<a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Repository ↗</a>
+</div>
+</div>
+</div>
 
-            <!-- F1 Race Prediction Research -->
-            <div class="card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                <div class="relative">
-                    <img src="img_apr_2.jpeg" alt="F1 Race Prediction Research" class="w-full h-48 object-cover">
-                    <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm">
-                        Sports Analytics
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-3">Stochastic Modeling of Formula 1 Race Outcomes</h3>
-                    <p class="text-gray-600 mb-4">
-                        A longitudinal analysis implementing advanced statistical methodologies for predicting Formula 1 race outcomes through multivariate time series analysis.
-                    </p>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="text-sm font-semibold text-gray-700">Statistical Framework:</h4>
-                            <ul class="mt-2 space-y-1 text-sm text-gray-600">
-                                <li>• ARIMA and SARIMA Modeling</li>
-                                <li>• Bayesian Parameter Estimation</li>
-                                <li>• Monte Carlo Simulation Methods</li>
-                            </ul>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">R Statistical Computing</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Time Series Analysis</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Predictive Modeling</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between mt-6 pt-6 border-t border-gray-200">
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Research Paper →</a>
-                        <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Repository ↗</a>
-                    </div>
-                </div>
-            </div>
+<!-- ChessGPT Platform -->
+<div class="card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+<div class="relative">
+<div class="h-48 bg-gradient-to-r from-purple-600 to-purple-800 flex items-center justify-center">
+<svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+</svg>
+</div>
+<div class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm">
+AI Platform
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">ChessGPT Platform</h3>
+<p class="text-gray-600 mb-4">
+Developed AI-driven chess platform implementing personalized learning algorithms that adapted content delivery based on individual skill progression for enhanced player development.
+</p>
+<div class="space-y-4">
+<div>
+<h4 class="text-sm font-semibold text-gray-700">Technical Features:</h4>
+<ul class="mt-2 space-y-1 text-sm text-gray-600">
+<li>• Personalized learning algorithm implementation</li>
+<li>• Adaptive content delivery system</li>
+<li>• Individual skill progression tracking</li>
+</ul>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Machine Learning</span>
+<span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">AI</span>
+<span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Python</span>
+</div>
+</div>
+<div class="flex justify-between mt-6 pt-6 border-t border-gray-200">
+<a href="#" class="text-
 
-            <!-- NLP Research Project -->
-            <div class="card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                <div class="relative">
-                    <img src="img_apr_3.jpeg" alt="NLP Research Project" class="w-full h-48 object-cover">
-                    <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm">
-                        Natural Language Processing
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-3">Transformer-Based Academic Text Analysis</h3>
-                    <p class="text-gray-600 mb-4">
-                        Implementation of advanced natural language processing methodologies for systematic analysis of academic research papers.
-                    </p>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="text-sm font-semibold text-gray-700">Technical Framework:</h4>
-                            <ul class="mt-2 space-y-1 text-sm text-gray-600">
-                                <li>• BERT-based Document Classification</li>
-                                <li>• Semantic Analysis using Transformers</li>
-                                <li>• Cross-validation and Error Analysis</li>
-                            </ul>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">BERT</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Transformers</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python NLP</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between mt-6 pt-6 border-t border-gray-200">
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Research Paper →</a>
-                        <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Repository ↗</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+purple-600 hover:text-purple-800 font-medium">View
+Details →</a>
+<a href="#" class="text-gray-600 hover:text-gray-800
+font-medium">Repository ↗</a>
+</div>
+</div>
+</div>
+
+<!-- Rural Financial Inclusion Research -->
+<div class="card bg-white rounded-xl shadow-lg overflow-hidden"
+data-aos="fade-up" data-aos-delay="200">
+<div class="relative">
+<div class="h-48 bg-gradient-to-r from-green-600 to-green-800 flex
+items-center justify-center">
+<svg class="w-16 h-16 text-white" fill="none" stroke="currentColor"
+viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+</svg>
+</div>
+<div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1
+rounded-full text-sm">
+Field Research
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Rural Financial Inclusion Research</h3>
+<p class="text-gray-600 mb-4">
+Conducted comprehensive field research across 6 villages in Ahmednagar,
+leading 32 in-depth SHG interviews to assess microfinance impact and
+identify key barriers to rural financial inclusion.
+</p>
+<div class="space-y-4">
+<div>
+<h4 class="text-sm font-semibold text-gray-700">Research Scope:</h4>
+<ul class="mt-2 space-y-1 text-sm text-gray-600">
+<li>• 32 in-depth SHG interviews conducted</li>
+<li>• 6 villages across Ahmednagar district</li>
+<li>• Comprehensive microfinance impact assessment</li>
+</ul>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Field Research</span>
+<span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Microfinance</span>
+<span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">SPSS</span>
+</div>
+</div>
+<div class="flex justify-between mt-6 pt-6 border-t border-gray-200">
+<a href="#" class="text-green-600 hover:text-green-800 font-medium">View
+Details →</a>
+<a href="#" class="text-gray-600 hover:text-gray-800
+font-medium">Report ↗</a>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- Publications Section with Academic Focus -->
+<!-- Publications Section -->
 <section id="publications" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 class="section-title">Research Publications & Academic Contributions</h3>
-        
-        <!-- Featured Publications -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <span class="text-sm text-blue-600 font-medium">Statistical Analysis & Gender Studies</span>
-                        <h3 class="text-xl font-semibold mt-2 mb-4">
-                            Quantitative Analysis of Gender Disparities in Data Science: A Longitudinal Study
-                        </h3>
-                        <p class="text-gray-600 mb-4">
-                            A comprehensive statistical investigation of gender representation patterns in the technology sector, utilizing multivariate analysis and longitudinal data modeling.
-                        </p>
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <p><strong>Methodology:</strong> Mixed-methods approach, Regression Analysis</p>
-                            <p><strong>Data Collection:</strong> Longitudinal Survey (2020-2024)</p>
-                            <p><strong>Publication:</strong> Journal of Data Science Ethics, 2024</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-6 pt-6 border-t border-gray-200">
-                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Access Full Paper →</a>
-                </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <span class="text-sm text-blue-600 font-medium">Machine Learning in Healthcare</span>
-                        <h3 class="text-xl font-semibold mt-2 mb-4">
-                            Advanced Machine Learning Applications in Medical Diagnosis: A Systematic Review
-                        </h3>
-                        <p class="text-gray-600 mb-4">
-                            Systematic evaluation of machine learning implementations in medical diagnostic procedures, featuring comparative analysis of deep learning architectures.
-                        </p>
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <p><strong>Methodology:</strong> Systematic Review, Meta-analysis</p>
-                            <p><strong>Analysis Period:</strong> 2019-2024</p>
-                            <p><strong>Publication:</strong> Healthcare Analytics Review, 2024</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-6 pt-6 border-t border-gray-200">
-                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Access Full Paper →</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h3 class="section-title">Publications & Research</h3>
+<div class="max-w-4xl mx-auto">
+<div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-blue-600" data-aos="fade-up">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0">
+<div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+</svg>
+</div>
+</div>
+<div class="flex-grow">
+<h4 class="text-xl font-semibold text-gray-900 mb-2">
+"Distinguishing Autonomous AI Agents from Collaborative Agentic Systems"
+</h4>
+<p class="text-gray-600 mb-4">
+Novel taxonomy framework published in peer-reviewed journal exploring the
+fundamental differences between autonomous AI agents and collaborative
+agentic systems in modern AI applications.
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">AI Research</span>
+<span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Taxonomy</span>
+<span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Peer-Reviewed</span>
+</div>
+<div class="flex items-center space-x-4 text-sm text-gray-500">
+<span>Published in Peer-Reviewed Journal</span>
+<span>•</span>
+<span>2024</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- Technical Research Competency Matrix -->
+<!-- Skills Section -->
 <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 class="section-title">Methodological Proficiency & Research Instrumentation</h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Statistical Computing Proficiency -->
-            <div class="bg-white p-8 rounded-xl shadow-lg">
-                <h3 class="text-xl font-semibold mb-6">Statistical Computing & Analysis Frameworks</h3>
-                <div class="space-y-6">
-                    <div class="relative">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-sm font-medium">Advanced Statistical Computing (Python)</span>
-                            <span class="text-sm text-gray-600">95%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
-                        </div>
-                        <div class="mt-2 text-sm text-gray-600">
-                            <p class="font-medium">Core Competencies:</p>
-                            <ul class="mt-1 space-y-1">
-                                <li>• Statistical Analysis Libraries (NumPy, SciPy)</li>
-                                <li>• Machine Learning Frameworks (Scikit-learn)</li>
-                                <li>• Deep Learning Architecture Implementation</li>
-                            </ul>
-                        </div>
-                    </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h3 class="section-title">Technical Skills & Proficiencies</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up">
+<h4 class="text-xl font-semibold text-blue-700 mb-4">Programming & Analytics</h4>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-gray-700">Python</span>
+<div class="w-20 bg-gray-200 rounded-full h-2">
+<div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-700">R</span>
+<div class="w-20 bg-gray-200 rounded-full h-2">
+<div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-700">SQL</span>
+<div class="w-20 bg-gray-200 rounded-full h-2">
+<div class="bg-blue-600 h-2 rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-700">JavaScript</span>
+<div class="w-20 bg-gray-200 rounded-full h-2">
+<div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
 
-                    <div class="relative">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-sm font-medium">Statistical Modeling (R)</span>
-                            <span class="text-sm text-gray-600">90%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
-                        </div>
-                        <div class="mt-2 text-sm text-gray-600">
-                            <p class="font-medium">Methodological Focus:</p>
-                            <ul class="mt-1 space-y-1">
-                                <li>• Advanced Statistical Modeling</li>
-                                <li>• Time Series Analysis</li>
-                                <li>• Multivariate Analysis</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+<h4 class="text-xl font-semibold text-green-700 mb-4">Visualization & BI</h4>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-gray-700">Tableau</span>
+<div class="w-20 bg-gray-200 rounded-full h-2">
+<div class="bg-green-600 h-2 rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-700">Power BI</span>
+<div class="w-20 bg-gray-200 rounded-full h-2">
+<div class="bg-green-600 h-2 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-700">Google Analytics</span>
+<div class="w-20 bg-gray-200 rounded-full h-2">
+<div class="bg-green-600 h-2 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
 
-            <!-- Research Instrumentation -->
-            <div class="bg-white p-8 rounded-xl shadow-lg">
-                <h3 class="text-xl font-semibold mb-6">Research Instrumentation & Methodologies</h3>
-                <div class="space-y-4">
-                    <div class="p-4 bg-gray-50 rounded-lg">
-                        <h4 class="font-semibold text-blue-700">Quantitative Research Methods</h4>
-                        <ul class="mt-2 space-y-2 text-sm text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">▸</span>
-                                <span>Structural Equation Modeling & Factor Analysis</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">▸</span>
-                                <span>Longitudinal Data Analysis & Panel Studies</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">▸</span>
-                                <span>Experimental Design & Causal Inference</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Research Publications & Output -->
-            <div class="bg-white p-8 rounded-xl shadow-lg">
-                <h3 class="text-xl font-semibold mb-6">Research Output & Academic Contributions</h3>
-                <div class="space-y-4">
-                    <div class="p-4 bg-gray-50 rounded-lg">
-                        <h4 class="font-semibold text-blue-700">Publication Metrics</h4>
-                        <div class="mt-4 space-y-3">
-                            <div>
-                                <div class="flex justify-between text-sm mb-1">
-                                    <span>Peer-Reviewed Articles</span>
-                                    <span>5</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2">
-                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 83%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-sm mb-1">
-                                    <span>Conference Proceedings</span>
-                                    <span>8</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2">
-                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+<h4 class="text-xl font-semibold text-purple-700 mb-4">Marketing & CRM</h4>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-gray-700">Salesforce Marketing Cloud</span>
+<div class="w-20 bg-gray-200 rounded-full h-2">
+<div class="bg-purple-600 h-2 rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-700">Coremedia</span>
+<div class="w-20 bg-gray-200 rounded-full h-2">
+<div class="bg-purple-600 h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-700">Netcore</span>
+<div class="w-20 bg-gray-200 rounded-full h-2">
+<div class="bg-purple-600 h-2 rounded-full" style="width: 70%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- Enhanced Footer with Academic Focus -->
+<!-- Contact Section -->
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h3 class="text-4xl font-bold text-gray-900 mb-4">Let's Connect</h3>
+<p class="text-xl text-gray-600">Ready to discuss data-driven solutions and opportunities</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="text-center p-6 bg-gray-50 rounded-xl" data-aos="fade-up">
+<div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+</svg>
+</div>
+<h4 class="text-xl font-semibold mb-2">Email</h4>
+<p class="text-gray-600">bansodprashik@gmail.com</p>
+</div>
+<div class="text-center p-6 bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+<div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+</svg>
+</div>
+<h4 class="text-xl font-semibold mb-2">Phone</h4>
+<p class="text-gray-600">+91 8308416597</p>
+</div>
+<div class="text-center p-6 bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+<div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+</svg>
+</div>
+<h4 class="text-xl font-semibold mb-2">Location</h4>
+<p class="text-gray-600">Mumbai, Maharashtra, India</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="col-span-2">
-                <h3 class="text-2xl font-bold mb-4">Prashik Bansod</h3>
-                <p class="text-gray-400">
-                    Research Data Scientist specializing in statistical learning, machine learning architectures, and quantitative methodologies. Primary research interests encompass Formula 1 analytics, public health initiatives, and advanced predictive modeling paradigms.
-                </p>
-                <div class="mt-6">
-                    <h4 class="text-lg font-semibold mb-2">Research Affiliations</h4>
-                    <p class="text-gray-400">
-                        MS Analytics Candidate, Tata Institute of Social Sciences
-                        <br>
-                        MIS M2023ANLT016
-                    </p>
-                </div>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Academic Network</h4>
-                <div class="flex space-x-4">
-                    <a href="https://github.com/Prashikpy" class="text-gray-400 hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/prashik-bansod-data-analyst/" class="text-gray-400 hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                    <a href="https://prashikbansod.medium.com/" class="text-gray-400 hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.958l5.378 11.795 4.728-11.795h6.633v.403l-1.916 1.837c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537v-10.91l-5.389 13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.521 3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.325-1.052v-10.608z"/>
-                        </svg>
-                    </a>
-                </div>
-                
-                <div class="mt-8">
-                    <h4 class="text-lg font-semibold mb-4">Research Inquiries</h4>
-                    <p class="text-gray-400">
-                        For research collaborations and academic inquiries:
-                        <br>
-                        <a href="mailto:m2023anlt016@stud.tiss.edu" class="hover:text-white">m2023anlt016@stud.tiss.edu</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="mt-8 pt-8 border-t border-gray-800">
-            <p class="text-center text-gray-400">&copy; 2025 Prashik Bansod. Academic Portfolio & Research Repository.</p>
-        </div>
-    </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h4 class="text-2xl font-bold mb-4 gradient-text">Prashik Bansod</h4>
+<p class="text-gray-400 mb-4">Data Analytics Professional specializing in machine learning, business intelligence, and strategic data-driven solutions.</p>
+<div class="flex space-x-4">
+<a href="https://github.com/Prashikpy" class="text-gray-400 hover:text-white transition-colors">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/prashik-bansod-data-analyst/" class="text-gray-400 hover:text-white transition-colors">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+</svg>
+</a>
+<a href="https://prashikbansod.medium.com/" class="text-gray-400 hover:text-white transition-colors">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.958l5.378 11.795 4.728-11.795h6.633v.403l-1.916 1.837c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537v-10.91l-5.389 13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.521 3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.325-1.052v-10.608z"/>
+</svg>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+<div class="space-y-2">
+<a href="#about" class="block text-gray-400 hover:text-white transition-colors">About</a>
+<a href="#experience" class="block text-gray-400 hover:text-white transition-colors">Experience</a>
+<a href="#projects" class="block text-gray-400 hover:text-white transition-colors">Projects</a>
+<a href="#publications" class="block text-gray-400 hover:text-white transition-colors">Publications</a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+<p>&copy; 2024 Prashik Bansod. All rights reserved.</p>
+</div>
+</div>
 </footer>
 
-<!-- Scripts Section -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    // Initialize AOS with research-appropriate timing
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-    });
+AOS.init({
+duration: 1000,
+once: true
+});
 
-    // Enhanced smooth scrolling for research sections
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-    });
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({
+behavior: 'smooth'
+});
+});
+});
 
-    // Dynamic navigation enhancement
-    window.addEventListener('scroll', function() {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 0) {
-            nav.classList.add('shadow-md', 'bg-white/95', 'backdrop-blur-sm');
-        } else {
-            nav.classList.remove('shadow-md', 'bg-white/95', 'backdrop-blur-sm');
-        }
-    });
+// Add CSS for nav links
+const style = document.createElement('style');
+style.textContent = `
+.nav-link {
+@apply text-gray-600 hover:text-blue-600 transition-colors font-medium;
+}
+.animate-fade-up {
+opacity: 0;
+transform: translateY(20px);
+animation: fadeUp 0.6s ease-out forwards;
+}
+.animate-fade-up.delay-200 {
+animation-delay: 0.2s;
+}
+@keyframes fadeUp {
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+`;
+document.head.appendChild(style);
 </script>
 </body>
 </html>
+
